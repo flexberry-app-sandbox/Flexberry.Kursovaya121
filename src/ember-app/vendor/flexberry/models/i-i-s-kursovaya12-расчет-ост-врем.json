@@ -1,0 +1,89 @@
+﻿{
+  "name": "IISKursovaya12РасчетОстВрем",
+  "modelName": "i-i-s-kursovaya12-расчет-ост-врем",
+  "className": "РасчетОстВрем",
+  "nameSpace": "IIS.Kursovaya12",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "доступно",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "использовано",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [
+    {
+      "name": "оказКонсульт",
+      "relatedTo": "i-i-s-kursovaya12-оказ-консульт",
+      "inverse": "расчетОстВрем"
+    }
+  ],
+  "projections": [
+    {
+      "name": "РасчетОстВремE",
+      "modelName": "i-i-s-kursovaya12-расчет-ост-врем",
+      "attrs": [
+        {
+          "name": "использовано",
+          "caption": "Использовано",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "доступно",
+          "caption": "Доступно",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": [
+        {
+          "projectionName": "ОказКонсультE",
+          "caption": "Оказ консульт",
+          "name": "оказКонсульт",
+          "relatedTo": "i-i-s-kursovaya12-оказ-консульт",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "РасчетОстВремL",
+      "modelName": "i-i-s-kursovaya12-расчет-ост-врем",
+      "attrs": [
+        {
+          "name": "использовано",
+          "caption": "Использовано",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "доступно",
+          "caption": "Доступно",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

@@ -1,0 +1,85 @@
+﻿{
+  "name": "IISKursovaya12ОказКонсульт",
+  "modelName": "i-i-s-kursovaya12-оказ-консульт",
+  "className": "ОказКонсульт",
+  "nameSpace": "IIS.Kursovaya12",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "времяКонсульт",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "дата",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "предостУслуга",
+      "type": "i-i-s-kursovaya12-услуга",
+      "flexberryType": "Услуга",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "заключДоговора",
+      "relatedTo": "i-i-s-kursovaya12-заключ-договора",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "расчетОстВрем",
+      "relatedTo": "i-i-s-kursovaya12-расчет-ост-врем",
+      "inverse": "оказКонсульт"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ОказКонсультE",
+      "modelName": "i-i-s-kursovaya12-оказ-консульт",
+      "attrs": [
+        {
+          "name": "дата",
+          "caption": "Дата",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "времяКонсульт",
+          "caption": "Время консульт",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "предостУслуга",
+          "caption": "Предост услуга",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}
